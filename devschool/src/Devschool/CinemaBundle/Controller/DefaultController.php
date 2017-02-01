@@ -8,7 +8,7 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 class DefaultController extends Controller
 {
     /**
-     * @Route("/")
+     * @Route("/", name="page_accueil")
      */
     public function indexAction()
     {
@@ -16,7 +16,7 @@ class DefaultController extends Controller
     }
 
     /**
-    * @Route("/films")
+    * @Route("/films", name="page_films")
     */
     public function listAction()
     {
@@ -31,15 +31,15 @@ class DefaultController extends Controller
     }
 
     /**
-   * @Route("/film/{id}", requirements={"id": "\d+"})
+    * @Route("/film/{id}", requirements={"id": "\d+"}, name="page_film")
    */
    public function showAction($id)
    {
-     $films = $this->getDoctrine()->getRepository('DevschoolCinemaBundle:Film')->find($id);
+     $film = $this->getDoctrine()->getRepository('DevschoolCinemaBundle:Film')->find($id);
 
     return $this->render(
         'DevschoolCinemaBundle:Film:show.html.twig',
-        ['films' => $films]
+        ['film' => $film]
       );
    }
 }

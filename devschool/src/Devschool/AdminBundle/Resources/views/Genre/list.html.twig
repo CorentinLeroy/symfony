@@ -1,0 +1,9 @@
+{# src\Devschool\AdminBundle\Resources\views\Genre\list.html.twig #}
+<h1>Liste des genres :</h1>
+<ul>
+{% for genre in genres %}
+  <a href="{{ path('admin_genre_modif', {'id': genre.id}) }}">{{ genre.nom }}</a>
+  <a href="{{ path('admin_genre_supprimer', {'id': genre.id}) }}">(x)</a>
+{% endfor %}
+</ul>
+<a href="{{ path('admin_genre_ajout') }}">Ajouter</a>

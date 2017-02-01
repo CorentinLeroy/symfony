@@ -1,0 +1,19 @@
+{# src/Devschool/CinemaBundle/Resources/views/layout.html.twig #}
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>{% block title %}Devschool{% endblock %}</title>
+        <link rel="stylesheet" href="{{ asset('css/style.css') }}" />
+    </head>
+    <body>
+        <ul class="menu">
+            <li><a href="{{ path('page_films') }}">Cinema</a></li>
+            <li><a href="{{ path('admin_genre_liste') }}">Admin</a></li>
+        </ul>
+
+        <div id="content">
+            {% block body %}{% endblock %}
+        </div>
+    </body>
+</html>

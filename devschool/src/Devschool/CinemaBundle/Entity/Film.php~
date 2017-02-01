@@ -45,7 +45,6 @@ class Film
     /**
      * @var string
      *
-     * @ORM\ManyToOne(targetEntity="Realisateur", inversedBy="films")
      * @ORM\Column(name="realisateur", type="string", length=255)
      */
     private $realisateur;

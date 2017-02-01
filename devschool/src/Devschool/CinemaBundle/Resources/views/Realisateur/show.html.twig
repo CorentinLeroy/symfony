@@ -1,0 +1,18 @@
+{# src\Devschool\CinemaBundle\Resources\views\Film\show.html.twig #}
+{% extends 'DevschoolCinemaBundle::layout.html.twig' %}
+
+{% block title %}{{ film.titre }}{% endblock %}
+
+{% block body %}
+  <h1>{{ film.titre }}</h1>
+
+  <h2{{ film.genre }}</h2>
+
+  <span>Ecrit par {{ film.realisateur }}</span>
+
+  <p>{{ film.synopsis }}</p>
+
+  <span>Sortie le : {{ film.dateDeSortie | date('d/m/Y') }}</span>
+
+  <p><a href="{{ path('page_films') }}">Retour</a></p>
+{% endblock %}

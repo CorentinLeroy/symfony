@@ -1,0 +1,21 @@
+{# src\Devschool\CinemaBundle\Resources\views\Film\list.html.twig #}
+{% extends 'DevschoolCinemaBundle::layout.html.twig' %}
+
+{% block title %}Liste des Films{% endblock %}
+
+{% block body %}
+  <h1>{{ titre|upper }} ({{ films|length }})</h1>
+
+  <ul class="liste">
+      {% for film in films %}
+          <li>
+            <h2><a href="{{ path('page_film', {'id': film.id}) }}">{{ film.titre }}</a></h2>
+              {% if film.realisateur == "J. K. Rowling" %}
+                  <strong><a href="{{ path('page_realisateur', {'id': film.id}) }}">{{ film.realisateur }}</a></strong>
+              {% else %}
+                  <span>{{ film.realisateur }}</span>
+              {% endif %}
+          </li>
+      {% endfor %}
+  </ul>
+{% endblock %}
