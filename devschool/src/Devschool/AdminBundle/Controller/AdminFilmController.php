@@ -21,7 +21,6 @@ class AdminFilmController extends Controller
    {
        $film = new Film();
        $form = $this->createForm(FilmType::class, $film);
-
        $form->handleRequest($request);
 
        if ($form->isSubmitted() && $form->isValid()) {

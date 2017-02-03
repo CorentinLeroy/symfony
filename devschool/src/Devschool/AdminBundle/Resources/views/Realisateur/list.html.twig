@@ -1,26 +1,26 @@
-{# src\Devschool\AdminBundle\Resources\views\Genre\list.html.twig #}
+{# src\Devschool\AdminBundle\Resources\views\Realisateur\list.html.twig #}
 {% extends 'DevschoolAdminBundle::layout.html.twig' %}
 
-{% block title %}<h1>Liste des genres :</h1>{% endblock %}
+{% block title %}<h1>Liste des Realisateurs :</h1>{% endblock %}
 
 {% block body %}
 <div class="container">
     <div class="row">
 
         <div class="col-md-3">
-            <p class="lead"> Admin Genre</p>
+            <p class="lead"> Admin Realisateur</p>
             <div class="list-group">
               <a href="{{ path('admin_film_liste') }}" class="list-group-item active"> Modifier les Films</a>
-              <a href="{{ path('admin_realisateur_liste') }}" class="list-group-item active"> Modifier les Realisateurs</a>
+              <a href="{{ path('admin_genre_liste') }}" class="list-group-item active"> Modifier les genres</a>
             </div>
         </div>
 
-        {% for genre in genres %}
+        {% for realisateur in realisateurs %}
         <div class="container-genre">
           <div class="list-genre">
             <div class="item-genre">
-              <a href="{{ path('admin_genre_modif', {'id': genre.id}) }}">{{ genre.nom }}</a>
-              <a href="{{ path('admin_genre_supprimer', {'id': genre.id}) }}">(x)</a>
+              <a href="{{ path('admin_realisateur_modif', {'id': realisateur.id}) }}">{{ realisateur.nom }}</a>
+              <a href="{{ path('admin_realisateur_supprimer', {'id': realisateur.id}) }}">(x)</a>
             </div>
           </div>
         </div>
@@ -28,7 +28,7 @@
         {% endfor %}
         <div class="col-lg-12 bouton">
           <div class="btn btn-secondary">
-            <a href="{{ path('admin_genre_ajout') }}">Ajouter</a>
+            <a href="{{ path('admin_realisateur_ajout') }}">Ajouter</a>
           </div>
         </div>
   </div>

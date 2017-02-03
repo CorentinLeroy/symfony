@@ -22,3 +22,79 @@ ul.menu li a {
 ul.menu li a:hover {
     background-color: #111;
 }
+
+.list-genre {
+  position: absolute;
+  top: 0;
+  height: 90px;
+  width: 110%;
+  color: black;
+}
+
+.item-genre {
+  height: 100%;
+  border: 0px solid rgba(123, 123, 123, 0.498039);
+  border-radius: 4px;
+  color: rgb(153, 153, 153);
+  line-height: 90px;
+  padding-left: 32px;
+  font-size: 24px;
+  font-weight: 400;
+  background-color: rgb(255, 255, 255);
+  box-shadow: rgba(0,0,0,0.2) 0px 1px 2px 0px;
+}
+
+.container-genre {
+  position: relative;
+  width: 320px;
+  height: 120px;
+  margin:0 auto;
+
+
+}
+.btn-secondary{
+  border: 0px solid rgba(123, 123, 123, 0.498039);
+  background-color: rgb(255, 255, 255);
+  box-shadow: rgba(0,0,0,0.2) 0px 1px 2px 0px;
+  padding-left:138px;
+  padding-right:138px;
+
+}
+.bouton{
+  text-align: center;
+    float:none;
+
+}
+
+#genre div{
+  margin: 20px 20px 15px 20px;
+}
+#genre_save{
+  margin-left:5%;
+}
+#realisateur div {
+    margin: 20px 20px 15px 20px;
+}
+#realisateur div label{
+width:15%;
+}
+#realisateur_dateDeNaissance{
+  margin-left:15% !important;
+}
+#realisateur_save{
+  margin-left:10%;
+}
+
+#film div{
+  margin: 20px 20px 15px 20px;
+}
+#film_save{
+  margin-left:8%;
+  margin-top:2%;
+}
+#film div label{
+width:15%;
+}
+#film_dateDeSortie{
+  margin-left:13% !important;
+}

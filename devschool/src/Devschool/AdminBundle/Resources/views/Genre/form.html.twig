@@ -1,4 +1,8 @@
 {# src\Devschool\AdminBundle\Resources\views\Genre\form.html.twig #}
+{% extends 'DevschoolAdminBundle::layout.html.twig' %}
+
+{% block body %}
 {{ form_start(form) }}
 {{ form_widget(form) }}
 {{ form_end(form) }}
+{% endblock %}

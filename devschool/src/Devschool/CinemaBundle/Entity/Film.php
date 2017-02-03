@@ -38,31 +38,31 @@ class Film
     /**
      * @var \DateTime
      *
-     * @ORM\Column(name="dateDeSortie", type="date")
+     * @ORM\Column(name="dateDeSortie", type="datetime")
      */
     private $dateDeSortie;
 
+
     /**
-     * @var string
+     * @var int
+     *
+     * @ORM\ManyToOne(targetEntity="Genre", inversedBy="films")
+     */
+    private $genre;
+
+    /**
+     * @var int
      *
      * @ORM\ManyToOne(targetEntity="Realisateur", inversedBy="films")
-     * @ORM\Column(name="realisateur", type="string", length=255)
      */
     private $realisateur;
 
-    /**
-     * @var string
-     *
-     * @ORM\ManyToOne(targetEntity="Genre", inversedBy="films")
-     * @ORM\Column(name="genre", type="string", length=255)
-     */
-    private $genre;
 
 
     /**
      * Get id
      *
-     * @return int
+     * @return integer
      */
     public function getId()
     {
@@ -118,7 +118,7 @@ class Film
     }
 
     /**
-     * Set $dateDeSortie
+     * Set dateDeSortie
      *
      * @param \DateTime $dateDeSortie
      *
@@ -126,7 +126,7 @@ class Film
      */
     public function setDateDeSortie($dateDeSortie)
     {
-        $this->$dateDeSortie = $dateDeSortie;
+        $this->dateDeSortie = $dateDeSortie;
 
         return $this;
     }
@@ -142,37 +142,13 @@ class Film
     }
 
     /**
-     * Set realisateur
-     *
-     * @param string $realisateur
-     *
-     * @return Film
-     */
-    public function setRealisateur($realisateur)
-    {
-        $this->realisateur = $realisateur;
-
-        return $this;
-    }
-
-    /**
-     * Get realisateur
-     *
-     * @return string
-     */
-    public function getRealisateur()
-    {
-        return $this->realisateur;
-    }
-
-    /**
      * Set genre
      *
-     * @param string $genre
+     * @param \Devschool\CinemaBundle\Entity\Genre $genre
      *
      * @return Film
      */
-    public function setGenre($genre)
+    public function setGenre(\Devschool\CinemaBundle\Entity\Genre $genre = null)
     {
         $this->genre = $genre;
 
@@ -182,10 +158,34 @@ class Film
     /**
      * Get genre
      *
-     * @return string
+     * @return \Devschool\CinemaBundle\Entity\Genre
      */
     public function getGenre()
     {
         return $this->genre;
+    }
+
+    /**
+     * Set realisateur
+     *
+     * @param \Devschool\CinemaBundle\Entity\Realisateur $realisateur
+     *
+     * @return Film
+     */
+    public function setRealisateur(\Devschool\CinemaBundle\Entity\Realisateur $realisateur = null)
+    {
+        $this->realisateur = $realisateur;
+
+        return $this;
+    }
+
+    /**
+     * Get realisateur
+     *
+     * @return \Devschool\CinemaBundle\Entity\Realisateur
+     */
+    public function getRealisateur()
+    {
+        return $this->realisateur;
     }
 }

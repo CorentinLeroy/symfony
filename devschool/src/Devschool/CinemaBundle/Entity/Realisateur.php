@@ -36,7 +36,7 @@ class Realisateur
     private $prenom;
 
     /**
-     * @var \DateTime
+     * @var \Date
      *
      * @ORM\Column(name="dateDeNaissance", type="date")
      */
@@ -46,6 +46,17 @@ class Realisateur
     * @ORM\OneToMany(targetEntity="Film", mappedBy="realisateur")
     */
     private $films;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="description", type="string", length=255)
+     */
+    private $description;
+
+    public function __toString(){
+      return $this->prenom.' '.$this->nom;
+    }
 
     /**
      * Get id
@@ -72,6 +83,29 @@ class Realisateur
     }
 
     /**
+     * Get description
+     *
+     * @return string
+     */
+    public function getDescription()
+    {
+        return $this->description;
+    }
+    /**
+     * Set description
+     *
+     * @param string $description
+     *
+     * @return Realisateur
+     */
+    public function setDescription($description)
+    {
+        $this->description = $description;
+
+        return $this;
+    }
+
+    /**
      * Get nom
      *
      * @return string
@@ -80,7 +114,6 @@ class Realisateur
     {
         return $this->nom;
     }
-
     /**
      * Set prenom
      *
@@ -108,7 +141,7 @@ class Realisateur
     /**
      * Set dateDeNaissance
      *
-     * @param \DateTime $dateDeNaissance
+     * @param \Date $dateDeNaissance
      *
      * @return Realisateur
      */
@@ -122,7 +155,7 @@ class Realisateur
     /**
      * Get dateDeNaissance
      *
-     * @return \DateTime
+     * @return \Date
      */
     public function getDateDeNaissance()
     {
